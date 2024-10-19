@@ -1,0 +1,308 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("./img/background-bricks.jpg");
+    background-repeat: repeat;
+    background-size: 15%;
+}
+
+.top-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: #151A20;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    margin-right: 20px;
+}
+
+.title {
+    text-align: left;
+    font-size: 32px;
+    font-weight: 800;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+}
+
+.slogan {
+    font-style: italic;
+    font-size:24px;
+    font-weight: 800;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: 480px;
+    height: 215px;
+    background-color: transparent;
+    border: 2px solid #151A20;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 0 10px;
+    padding: 10px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 5px 5px 20px black;
+}
+
+
+.button-image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 30px 30px rgba(0,0,0,0.9);
+    margin-right: 15px; /* Space between image and line */
+}
+
+.img-container{
+
+    position: relative;
+    width: 180px;
+    height: 180px;
+}
+
+.img-container::after{
+    content: "";
+  position: absolute;
+  border-radius: 10px;
+
+  inset: 0;
+    box-shadow: inset 0 0 10px 5px rgba(0,0,0,0.5);
+
+
+}
+
+.button-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 15px; /* Space between line and text */
+    flex-grow: 1;
+}
+
+.line {
+    width: 2px;
+    height: 100%;
+    background-color: black;
+    margin-left: 15px; /* Space between image and line */
+}
+
+h2 {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-size: 24px;
+    color: #151A20;
+    margin-bottom: 10px; /* Space between title and text */
+}
+
+p {
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    color: #151A20;
+    margin: 0;
+}
+
+.subscribe-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.subscribe-input {
+    padding: 10px;
+    font-size: 14px;
+    width: 250px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.subscribe-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.subscribe-button:hover {
+    background-color: #218838;
+}
+
+
+footer {
+    height: 100px;
+    background-color: #151A20;
+    width: 100%;
+    opacity: 0.9;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.footer-table {
+    width: 25%; /* Table takes up 25% of the total width */
+    margin: 0 auto; /* Center the table */
+    table-layout: fixed;
+}
+
+.footer-table td {
+    padding: 5px;
+    text-align: left; /* Align text to the left */
+}
+
+.footer-item {
+    position: relative;
+    padding-left: 20px; /* Space for the bullet */
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+}
+
+.footer-item::before {
+    content: '• '; /* Use the bullet symbol */
+    color: white; /* Same color as the text */
+    left: 0;
+    font-size: 22px; /* Adjust size to match */
+}
+
+.footer-item:hover{
+
+    font-weight: 800;;
+
+}
+
+
+/* Responsive adjustments using media queries */
+@media (max-width: 768px) {
+    .top-content {
+        flex-direction: column; /* Stack logo and title vertically */
+        text-align: center;
+    }
+
+    .logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+        width: 150px; /* Adjust logo size for smaller screens */
+        height: 150px;
+    }
+
+    .title h1 {
+        font-size: 28px; /* Adjust font sizes */
+    }
+
+    .slogan {
+        font-size: 20px;
+    }
+
+    .button-container {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+
+    .button {
+        width: 100%; /* Buttons take full width on small screens */
+        height: auto; /* Adjust height dynamically */
+        margin-bottom: 15px; /* Add space between buttons */
+    }
+
+    .button-image {
+        width: 120px; /* Smaller images on mobile */
+        height: 120px;
+    }
+
+    .line {
+        height: 120px; /* Adjust the height of the separating line */
+    }
+
+    h2 {
+        font-size: 22px; /* Smaller title font */
+    }
+
+    p {
+        font-size: 18px; /* Smaller text font */
+    }
+
+    .subscribe-container {
+        flex-direction: column; /* Stack input and button vertically */
+    }
+
+    .subscribe-input {
+        width: 100%; /* Full width input on small screens */
+        margin-right: 0;
+        margin-bottom: 10px; /* Add space below input */
+    }
+
+    .footer-table {
+        width: 100%; /* Footer takes full width on small screens */
+    }
+}
+
+/* Further adjustments for very small screens (max-width: 480px) */
+@media (max-width: 480px) {
+    .title h1 {
+        font-size: 24px; /* Further reduce font sizes */
+    }
+
+    .slogan {
+        font-size: 18px;
+    }
+
+    .button {
+        height: auto; /* Let buttons scale based on content */
+    }
+
+    .button-image {
+        width: 100px; /* Even smaller images */
+        height: 100px;
+    }
+
+    .line {
+        height: 100px;
+    }
+
+    .footer-table td {
+        text-align: center; /* Center text in footer for small screens */
+    }
+}
