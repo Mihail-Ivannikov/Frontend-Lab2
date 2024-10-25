@@ -1,49 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Auto Parts Catalog</title>
-    <link rel="stylesheet" href="../css/catalogue.css"> 
-</head>
-<body>
+    <link rel="stylesheet" href="../css/catalogue.css" />
+    <link rel="icon" href="../favicon.png" />
+  </head>
+  <body>
     <header>
-        <div class="logo-name">
-            <img src="../img/logo.png" alt="Logo" class="logo"> 
-            <h1 class="site-name">GearZone</h1> 
-        </div>
+      <div class="logo-name">
+        <img src="../img/logo.png" alt="Logo" class="logo" />
+        <h1 class="site-name">GearZone</h1>
+      </div>
+      <div class="search-bar-wrapper">
         <div class="search-bar">
-            <input type="text" placeholder="Search parts...">
-            <button class="search-icon">🔍</button> 
+          <input type="text" class="search-input" placeholder="Search" />
+          <a href="#"
+            ><img src="../img/serach.png" alt="serach" class="search-icon"
+          /></a>
         </div>
-        <div class="cart-icon">
-            <img src="images/cart.png" alt="Cart"> 
-        </div>
+      </div>
+      <div class="cart-icon">
+        <a href="#"><img src="../img/cart.png" alt="cart" /></a>
+      </div>
     </header>
 
     <main>
-        
-            <div class="categories-container">
-            <h2>Categories</h2>
-            <ul>
-                <li>Engine Parts</li>
-                <li>Brakes</li>
-                <li>Suspension</li>
-                <li>Exhaust</li>
-            </ul>
-        </div>
-        
+      <div class="categories-container">
+        <h2>Categories</h2>
+        <ul>
+          <a href="#"><li>Engine Parts</li></a>
+          <a href="#"><li>Brakes</li></a>
+          <a href="#"><li>Suspension</li></a>
+          <a href="#"><li>Exhaust</li></a>
+        </ul>
+      </div>
 
-        <section class="product-grid" id="product-grid">
-            <!-- Product cards will be dynamically added here -->
-        </section>
+      <section class="products" id="product-grid">
+        <!-- Product cards will be dynamically added here -->
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Auto Parts Shop. All rights reserved.</p>
+      <p>&copy; 2024 Auto Parts Shop. All rights reserved.</p>
     </footer>
 
-
     <script src="../js/catalogue.js"></script>
-</body>
+  </body>
 </html>

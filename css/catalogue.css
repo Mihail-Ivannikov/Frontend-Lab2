@@ -3,9 +3,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
@@ -13,95 +18,102 @@ body {
     background-image: url(../img/background-bricks.jpg);
     background-repeat: repeat;
     background-size: 10%;
-}
-
-/* Header Styles */
-header {
+  }
+  
+  /* Header Styles */
+  header {
     display: flex;
     height: 100px;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: rgba(21,26,32, 0.9);
+    background-color: rgba(21, 26, 32, 0.9);
     color: #fff;
-}
-
-.logo-name {
+  }
+  
+  .logo-name {
     display: flex;
     align-items: center;
-}
-
-.logo {
+  }
+  
+  .logo {
     height: 80px;
-    
-}
-
-.site-name {
+  }
+  
+  .site-name {
     margin-left: 10px;
     font-size: 32px;
     font-family: "Lora", serif;
     font-weight: 800;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-}
-
-.search-bar input {
-    padding: 5px;
+  }
+  
+  .search-bar-wrapper {
+    height: 100%;
+    float: left;
+    padding: 10px;
+    width: fit-content;
+  }
+  .search-bar {
+    width: fit-content;
+    border-radius: 10px;
+    background-color: white;
+    padding: 10px;
+    padding-left: 30px;
+    margin: auto;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  .search-input {
+    display: inline-block;
+    vertical-align: middle;
     width: 300px;
-}
-
-.search-bar .search-icon {
-    background: none;
+    height: 40px;
     border: none;
-    cursor: pointer;
-    font-size: 18px;
-    padding-left: 10px;
-}
-
-.cart-icon img {
+  }
+  
+  .search-icon {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
+    float: right;
+  }
+  
+  .search-input:focus {
+    outline: none;
+  }
+  
+  .cart-icon img {
     width: 30px;
     height: auto;
-}
-
-/* Main Container Styles */
-main {
+  }
+  
+  /* Main Container Styles */
+  main {
     display: flex;
     flex: 1;
     padding: 20px;
-}
-
-.categories {
-    padding: 10px;
-    
-}
-
-.categories-container{
-    background-color: rgba(21,26,32, 0.9);
+  }
+  
+  .categories-container {
+    background-color: rgba(21, 26, 32, 0.9);
     color: white;
-    width:20%;
-    padding:20px;
+    width: 300px;
+    height: fit-content;
+    padding: 20px;
     border-radius: 10px;
-}
-
-.categories h2 {
-    margin-bottom: 10px;
-}
-
-.categories ul {
-    list-style-type: none;
-    padding-left: 20px;
-}
-
-.categories li {
-    margin-bottom: 10px;
-    list-style: disc;
-}
-
-/* General grid layout */
-.product-grid {
+  }
+  
+  .categories-container h3 {
+    padding: 10px;
+  }
+  
+  .categories-container ul {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .products {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -109,11 +121,14 @@ main {
     gap: 30px;
     padding: 0 20px;
     max-width: 1000px;
-    
-}
-
-/* Product styles */
-.product {
+  }
+  
+  .cart-icon img {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .product {
     padding-left: 20px;
     width: 215px;
     height: 300px;
@@ -124,50 +139,44 @@ main {
     flex-direction: column;
     justify-content: space-between;
     border-radius: 10px;
-    
-   
-}
-
-.product img {
+  }
+  
+  .product img {
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: contain;
-}
-
-.product h3{
+  }
+  
+  .product h3 {
     font-size: 12px;
     padding-bottom: 20px;
-}
-
-.product p{
+  }
+  
+  .product p {
     font-weight: 800;
-}
-
-/* Content below the image: name, price, and buy button */
-.product-info {
+  }
+  
+  .product-info {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-}
-
-.product-text{
+  }
+  
+  .product-text {
     display: flex;
     height: 100%;
     padding-right: 10px;
-    
-}
-
-
-
-.product h3, .product p {
+  }
+  
+  .product h3,
+  .product p {
     margin: 0;
-}
-
-/* Buy Button Styles */
-.buy-button {
-    background-color: #20252A;
+  }
+  
+  .buy-button {
+    background-color: #20252a;
     color: white;
     border-radius: 10px;
     border: none;
@@ -176,78 +185,48 @@ main {
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
-}
-
-.buy-button:hover {
+  }
+  
+  .buy-button:hover {
     background-color: #333;
-}
-
-/* Responsive grid for smaller screens */
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .product-grid {
-        grid-template-columns: 1fr; /* 1 column on phones */
-    }
-}
-
-/* Footer Styles */
-footer {
-    background-color: rgba(21,26,32, 0.9);
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: rgba(21, 26, 32, 0.9);
     height: 100px;
     color: #fff;
     text-align: center;
     padding: 10px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    /* For tablets or small screens */
-    .product-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  }
+  
+  @media (max-width: 750px) {
+    .categories-container {
+      display: none;
     }
-
-    header, footer {
-        flex-direction: column;
-        text-align: center;
+  
+    header {
+      height: 200px;
+      display: grid;
+      grid-template-areas:
+        "logo logo"
+        "search cart";
     }
-
-    .search-bar {
-        width: 100%;
+  
+    .search-bar-wrapper {
+      grid-area: search;
     }
-
-    .categories {
-        width: 100%;
-        margin-bottom: 20px;
+  
+    .search-input {
+      width: 200px;
     }
-
-    .product-grid {
-        width: 100%;
+  
+    .cart-icon {
+      grid-area: cart;
     }
-}
-
-@media (max-width: 480px) {
-    /* For phones */
-    .product-grid {
-        grid-template-columns: 1fr; /* 1 column */
+  
+    .logo {
+      grid-area: logo;
     }
-
-    .search-bar input {
-        width: 100%;
-    }
-}
-
-@media (min-width: 1200px) {
-    /* For wide screens */
-    .product-grid {
-        grid-template-columns: repeat(6, 1fr); /* 6 columns */
-    }
-
-    .search-bar input {
-        width: 500px;
-    }
-}
+  }
+  
