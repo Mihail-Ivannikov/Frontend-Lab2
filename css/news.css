@@ -7,37 +7,32 @@
 .grid {
   display: grid;
   width: 100%;
-  grid-template-areas:
-    "header header header"
-    "news-1 news-1 sidebar"
-    "news-2 news-2 sidebar"
-    "news-3 news-3 sidebar"
-    "footer footer footer";
+  grid-template-areas: "header header header" "news-1 news-1 sidebar" "news-2 news-2 sidebar" "news-3 news-3 sidebar" "footer footer footer";
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-areas: "header" "news-1" "news-2" "news-3" "sidebar" "footer";
+  }
 }
 
 header {
   grid-area: header;
-
   height: 100px;
   width: 100%;
   background-color: #20252a;
   overflow: hidden;
 }
-
-.logo-block {
+header .logo-block {
   margin: auto;
-
   width: fit-content;
   padding: 10px;
 }
-
-.logo-image {
+header .logo-block .logo-image {
   max-height: 80px;
   display: inline-block;
   vertical-align: middle;
 }
-
-.logo-text {
+header .logo-block .logo-text {
   display: inline-block;
   vertical-align: middle;
   color: white;
@@ -48,46 +43,75 @@ header {
 
 .sidebar {
   grid-area: sidebar;
+  padding: 20px 40px 20px 20px;
+  font-family: "Lora", serif;
+  color: #20252a;
+  border-left: dotted #20252a 2pt;
+}
+@media (max-width: 600px) {
+  .sidebar {
+    border: none;
+  }
+}
+.sidebar .sidebar-item-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+.sidebar .sidebar-item-wrapper .sidebar-item {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+  padding: 20px;
+  width: 100%;
+}
+.sidebar .sidebar-item-wrapper .sidebar-item .sidebar-item-title {
+  font-size: 20px;
+  padding: 20px;
 }
 
 .news-block {
-  height: 100px;
-  width: 100%;
-  height: 100%;
   padding: 20px;
-
   display: grid;
-  grid-template-areas:
-    "news-img news-title"
-    "news-img news-date"
-    "news-img news-text";
-
-  font-family: "Lora", "serif";
+  grid-template-areas: "news-img news-title" "news-img news-date" "news-img news-text";
+  font-family: "Lora", serif;
   color: #20252a;
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
-
-.news-image {
+@media (max-width: 1200px) {
+  .news-block {
+    grid-template-areas: "news-title" "news-date" "news-img" "news-text";
+  }
+  .news-block .news-image {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
+  .news-block .news-title,
+  .news-block .news-date {
+    left: 20px;
+  }
+  .news-block .news-text {
+    margin: auto;
+    padding: 15px;
+  }
+}
+.news-block .news-image {
   grid-area: news-img;
   height: 100%;
   max-height: 350px;
   width: 500px;
   padding-right: 20px;
 }
-
-.news-title {
+.news-block .news-title {
   grid-area: news-title;
   font-size: 32px;
 }
-
-.news-date {
+.news-block .news-date {
   grid-area: news-date;
   font-size: 20px;
 }
-
-.news-text {
-  font-size: 22px;
+.news-block .news-text {
   grid-area: news-text;
+  font-size: 22px;
 }
 
 #news-block-1 {
@@ -97,33 +121,9 @@ header {
 #news-block-2 {
   grid-area: news-2;
 }
+
 #news-block-3 {
   grid-area: news-3;
-}
-
-.sidebar {
-  padding: 20px;
-  padding-left: 40px;
-  font-family: "Lora", "serif";
-  color: #20252a;
-  border-left: dotted #20252a 2pt;
-}
-
-.sidebar-item-wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-}
-
-.sidebar-item {
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
-  padding: 20px;
-  width: 100%;
-}
-
-.sidebar-item-title {
-  font-size: 20px;
-  padding: 20px;
 }
 
 footer {
@@ -131,56 +131,15 @@ footer {
   height: 100px;
   background-color: #20252a;
   color: white;
-  font-size: 24;
-  font-family: "Lora", "serif";
-  vertical-align: middle;
+  font-size: 24px;
+  font-family: "Lora", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.footer-text {
+footer .footer-text {
   padding: 20px;
   text-align: center;
-  vertical-align: middle;
 }
 
-@media (max-width: 1200px) {
-  .news-block {
-    grid-template-areas:
-      "news-title"
-      "news-date"
-      "news-img"
-      "news-text";
-  }
-  .news-image {
-    margin: auto;
-    width: 100%;
-    padding: 0;
-    padding: 10px;
-  }
-  .news-title {
-    left: 20px;
-  }
-
-  .news-text {
-    margin: auto;
-    padding: 15px;
-  }
-  .news-date {
-    left: 20px;
-  }
-}
-
-@media (max-width: 600px) {
-  .grid {
-    grid-template-areas:
-      "header"
-      "news-1"
-      "news-2"
-      "news-3"
-      "sidebar"
-      "footer";
-  }
-
-  .sidebar {
-    border: none;
-  }
-}
+/*# sourceMappingURL=news.css.map */
